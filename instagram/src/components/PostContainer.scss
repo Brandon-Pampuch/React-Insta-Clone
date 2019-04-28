@@ -1,0 +1,23 @@
+.post-container{
+
+    &__image{
+        width: 100%;
+        height: 100%;
+    }
+
+    &__user-image{
+        height:80px;
+        width: 80px;
+        border-radius: 40px;
+        margin: 20px;
+    }
+
+    &__title{
+        display:flex;
+        justify-content: start;
+        align-items: center;
+    }
+
+   
+
+}
