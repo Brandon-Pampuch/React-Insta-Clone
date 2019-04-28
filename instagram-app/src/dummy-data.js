@@ -2,7 +2,7 @@ const dummyData = [
     {
         id: "a",
         username: "philzcoffee",
-        thumbnailUrl: 'https://instagram.fbna1-1.fna.fbcdn.net/vp/31c45306e6ca815b8c59940aed10cedc/5B2D3C88/t51.2885-19/11201517_887808411287357_1307163552_a.jpg',
+        thumbnailUrl: 'https://sickr.files.wordpress.com/2015/04/link_nes.png',
         imageUrl: 'https://oyster.ignimgs.com/mediawiki/apis.ign.com/the-legend-of-zelda/1/10/Link_triforce.png?width=640',
         likes: 400,
         timestamp: "July 17th 2017, 12:42:40 pm",
@@ -27,7 +27,7 @@ const dummyData = [
     {
         id: "b",
         username: "twitch",
-        thumbnailUrl: 'https://instagram.fbna1-1.fna.fbcdn.net/vp/81f608ddb76a034e06c0d1669e7e2b48/5B35C840/t51.2885-19/10684037_1512272482349821_444823433_a.jpg',
+        thumbnailUrl: 'https://sickr.files.wordpress.com/2015/04/link_nes.png',
         imageUrl: 'https://www.zeldadungeon.net/Zelda01/Walkthrough/03/001.png',
         likes: 4307,
         timestamp: "July 15th 2017, 03:12:09 pm",
@@ -62,7 +62,7 @@ const dummyData = [
     {
         id: "c",
         username: "playhearthstone",
-        thumbnailUrl: 'https://instagram.fbna1-1.fna.fbcdn.net/vp/51d5b37438ae3a47df37b7ed3fda141f/5B4ABAA7/t51.2885-19/s150x150/13398400_140638743023210_310840336_a.jpg',
+        thumbnailUrl: 'https://sickr.files.wordpress.com/2015/04/link_nes.png',
         imageUrl: 'https://www.goombastomp.com/wp-content/uploads/2016/02/Legend-of-Zelda-Desktop-Wallpaper-15.jpg',
         likes: 5306,
         timestamp: "July 14th 2017, 10:04:08 am",
