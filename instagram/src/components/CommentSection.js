@@ -3,11 +3,24 @@ import Comment from "./Comment";
 import "./CommentSection.scss"
 import PropTypes from 'prop-types';
 
-const CommentsSection = props => {
+class CommentsSection extends React.Component{
+  constructor(props){
+    super(props)
+    this.state = {
+      comments : props.comment
+
+
+  }
+
+  }
+
+
+
+ render(){
   return (
     <div className="comment-section">
       <div className="comment-section__comment-list">
-        {props.comments.map(comment => {
+        {this.state.comments.map(comment => {
           return <Comment comment={comment.text} key={comment.id} username={comment.username} />;
         })}
       </div>
@@ -15,6 +28,7 @@ const CommentsSection = props => {
       <i className="fas fa-ellipsis-h comment-section__comment-icon"></i>
     </div>
   );
+}
 };
 
 CommentsSection.propTypes = {
