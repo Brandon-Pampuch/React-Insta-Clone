@@ -3,7 +3,7 @@ const dummyData = [
         id: "a",
         username: "philzcoffee",
         thumbnailUrl: 'https://sickr.files.wordpress.com/2015/04/link_nes.png',
-        imageUrl: 'https://oyster.ignimgs.com/mediawiki/apis.ign.com/the-legend-of-zelda/1/10/Link_triforce.png?width=640',
+        imageUrl: 'https://s.aolcdn.com/hss/storage/midas/d8a9abd07346269f2d12a1d380ed2f11/204736267/zeldafeat-ed.jpg',
         likes: 400,
         timestamp: "July 17th 2017, 12:42:40 pm",
         comments: [
@@ -63,7 +63,7 @@ const dummyData = [
         id: "c",
         username: "playhearthstone",
         thumbnailUrl: 'https://sickr.files.wordpress.com/2015/04/link_nes.png',
-        imageUrl: 'https://www.goombastomp.com/wp-content/uploads/2016/02/Legend-of-Zelda-Desktop-Wallpaper-15.jpg',
+        imageUrl: 'https://pmcvariety.files.wordpress.com/2018/10/the-legend-of-zelda-nes.png?w=768&h=504&crop=1',
         likes: 5306,
         timestamp: "July 14th 2017, 10:04:08 am",
         comments: [
