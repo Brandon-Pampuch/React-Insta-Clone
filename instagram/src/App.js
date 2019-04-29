@@ -6,19 +6,35 @@ import PostContainer from './components/PostContainer'
 import SearchBar from './components/SearchBar'
 
 class App extends React.Component{
+
   constructor(){
     super()
     this.state = {
       data : dummyData
+   
     }
   }
-  
+
+
+  addHeart = (key) =>{
+    this.state.data.map((cur)=>{
+
+
+      if(key === cur.id){
+      return 
+      }
+      
+    })
+  }
+
   render(){
+
   return (
+  
     <div className="container">
       <SearchBar/>
-       {this.state.data.map(post =>{
-        return <PostContainer post={post} key={post.id} />
+       {this.state.data.map((post,index) =>{
+        return <PostContainer post={post} key={post.id} index={index} addHeart={this.addHeart} number={post.id} />
        })}
     </div>
   );
