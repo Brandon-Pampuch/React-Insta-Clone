@@ -17,7 +17,7 @@ const PostContainer = props => {
       <img
         className="post-container__image"
         src={props.post.imageUrl}
-        alt="instagram"
+        alt="insta"
       />
       <p>
         <strong>{props.post.likes} likes</strong>
