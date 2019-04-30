@@ -9,12 +9,40 @@ class App extends React.Component {
   constructor() {
     super();
     this.state = {
-      data: dummyData
+      data: [],
+      search: ""
     };
   }
 
-  addHeart = id => {
+  componentDidMount(){
+    this.setState({data : dummyData})
+  }
+
+  onChangeHandler = event => {
+    this.setState({
+      ...this.state,
+      [event.target.name]: event.target.value
+    });
+  };
+
+  searchHandler = (event) =>{
+    event.preventDefault()
     this.setState(prevState =>({
+      
+      data: prevState.data.filter(post =>{
+        if(post.username === this.state.search){
+          return true
+        }else{
+          return false
+        }
+      })
+    }))
+
+  }
+  
+
+  addHeart = id => {
+    this.setState(prevState => ({
       data: prevState.data.map(post => {
         if (post.id === id) {
           return {
@@ -31,7 +59,7 @@ class App extends React.Component {
   render() {
     return (
       <div className="container">
-        <SearchBar />
+        <SearchBar onChangeHandler={this.onChangeHandler} searchState={this.state.search} searchHandler={this.searchHandler} />
         {this.state.data.map((post, index) => {
           return (
             <PostContainer

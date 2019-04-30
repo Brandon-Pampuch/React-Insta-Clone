@@ -13,9 +13,7 @@ class CommentsSection extends React.Component{
       username: "billy bob",
       id: ""
     } 
-
   }
-
 }
 
   addNewComment =(event) =>{
