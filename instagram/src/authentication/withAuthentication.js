@@ -3,23 +3,18 @@ import React from "react";
 //need access to state to check or map over usernames
 
 const withAuthentication = PostsPage => LoginPage => {
+//make this a class component
 
-  
-      if (true) {
-        //if user is in username //return posts
+  if (localStorage.getItem("username")) {
+        //if user is in local storage return 
 
-        return (
-          <div>
-            <PostsPage />
-          </div>
-        );
+        return PostsPage
+        
       } else {
-        return (
-            <div>
-              <LoginPage />
-            </div>
-        )
-      }
+        return  LoginPage
+  
+      
     } 
+}
 
 export default withAuthentication;
