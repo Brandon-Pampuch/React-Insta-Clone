@@ -18,7 +18,7 @@ const Login = () => {
           <input className="login-form__login-input" type="text" />
         </form>
       </div>
-      <img src="http://www.logospng.com/images/15/instagram-logo-large-390x130-jonathan-jeter-15681.png" />
+      <img src="http://www.logospng.com/images/15/instagram-logo-large-390x130-jonathan-jeter-15681.png" alt="instagram" />
       <h2>(clone)</h2>
     </div>
   );

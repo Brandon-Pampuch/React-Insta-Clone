@@ -2,19 +2,33 @@ import React from "react";
 
 //need access to state to check or map over usernames
 
-const withAuthentication = PostsPage => LoginPage => {
-//make this a class component
+const withAuthentication = PostsPage => LoginPage =>
+  class extends React.Component {
+    constructor() {
+        super();
+        this.state = {
+            loggedIn:false
+        };
+      }
 
-  if (localStorage.getItem("username")) {
-        //if user is in local storage return 
+      componentDidMount(){
+    
+          if(localStorage.getItem("username")){
+            this.setState({loggedIn: true})
+          }else{
+            this.setState({loggedIn: false})
+          }
+        }
 
-        return PostsPage
-        
+    render() {
+      if (this.state.loggedIn === true) {
+        return <PostsPage />;
       } else {
-        return  LoginPage
-  
-      
-    } 
-}
+        return <LoginPage />;
+      }
+    }
+  };
 
 export default withAuthentication;
+
+
