@@ -7,7 +7,7 @@ class CommentsSection extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      comments: props.comments, //array of comments
+      comments: props.comments, 
       curComment: {
         text: "",
         username: "billy bob",
@@ -16,7 +16,27 @@ class CommentsSection extends React.Component {
     };
   }
 
-  addNewComment = event => {
+  componentWillMount(){
+    localStorage.getItem('comments') && this.setState({
+        comments: JSON.parse(localStorage.getItem('comments')),
+        isLoading: false
+    })
+}
+
+componentDidMount(){
+  console.log("comments:", this.props.comments)
+    if(!localStorage.getItem('comments')){
+      this.setState({comments: this.props.comments})
+    }else{
+        console.log('using data from local storage')
+    }
+  }
+
+componentWillUpdate(nextProps, nextState) {
+  localStorage.setItem('comments',JSON.stringify(nextState.comments))
+}
+
+addNewComment = event => {
     event.preventDefault();
     this.setState({
       ...this.state,
