@@ -1,21 +1,17 @@
-import React from 'react'
-import PropTypes from 'prop-types';
+import React from "react";
+import PropTypes from "prop-types";
 
-
-
-
-const Comment = (props)=>{
-
-    return(
-
-        <p className=""><strong>{props.username}</strong>: {props.comment}</p>
-    )
-}
-
+const Comment = props => {
+  return (
+    <p className="">
+      <strong>{props.username}</strong>: {props.comment}
+    </p>
+  );
+};
 
 Comment.propTypes = {
-    username: PropTypes.string.isRequired,
-    comment: PropTypes.string.isRequired
-}
+  username: PropTypes.string.isRequired,
+  comment: PropTypes.string.isRequired
+};
 
-export default Comment
+export default Comment;

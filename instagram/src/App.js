@@ -1,48 +1,25 @@
-import React from 'react';
-import './App.scss';
-import './global-styles/global.scss'
-import dummyData from './dummy-data'
-import PostContainer from './components/PostContainer'
-import SearchBar from './components/SearchBar'
+import React from "react";
+import "./App.scss";
+import "./global-styles/global.scss";
+import PostPage from "./components/PostsPage"
+import withAuthentication from './authentication/withAthentication'
 
-class App extends React.Component{
-
-  constructor(){
-    super()
+class App extends React.Component {
+  constructor() {
+    super();
     this.state = {
-      data : dummyData
+
    
-    }
+    };
   }
 
-
-  addHeart = (key) =>{
-    this.state.data.map((cur)=>{
-
-
-      if(key === cur.id){
-      return 
-      }
-      
-    })
-  }
-
-  render(){
-
-  return (
-  
-    <div className="container">
-      <SearchBar/>
-       {this.state.data.map((post,index) =>{
-        return <PostContainer post={post} key={post.id} index={index} addHeart={this.addHeart} number={post.id} />
-       })}
-    </div>
-  );
+  render() {
+    return (
+      <div className="container">
+        <PostPage/>
+      </div>
+    );
   }
 }
-
-
-
-
 
 export default App;
