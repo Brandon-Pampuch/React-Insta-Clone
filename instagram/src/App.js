@@ -5,6 +5,7 @@ import PostPage from "./components/PostsPage";
 import withAuthentication from "./authentication/withAuthentication";
 import Login from './components/Login/Login'
 
+
 const ComponentFromWithAuthenticate = withAuthentication(PostPage)(Login)
 console.log (ComponentFromWithAuthenticate)
 
