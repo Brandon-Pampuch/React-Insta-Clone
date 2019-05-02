@@ -1,7 +1,22 @@
 import React from "react";
 import Comment from "./Comment";
-import "./CommentSection.scss";
 import PropTypes from "prop-types";
+import styled from "styled-components"
+
+const CommentBorder = styled.div`
+border-bottom: 2px solid rgb(184, 184, 184);
+`
+const CommentInput = styled.input`
+padding: 17px 0px;
+width: 1050px;
+border: 0;
+outline: 0;
+font-size: 2.5rem;
+`
+
+const CommentIcon = styled.i`
+  font-size:  2rem;
+`
 
 class CommentsSection extends React.Component {
   constructor(props) {
@@ -63,8 +78,8 @@ addNewComment = event => {
 
   render() {
     return (
-      <div className="comment-section">
-        <div className="comment-section__comment-list">
+      <div>
+        <CommentBorder>
           {this.state.comments.map(comment => {
             return (
               <Comment
@@ -74,11 +89,10 @@ addNewComment = event => {
               />
             );
           })}
-        </div>
+        </CommentBorder>
         <form onSubmit={this.addNewComment}>
-          <input
+          <CommentInput
             onChange={this.onChangeHandler}
-            className="comment-section__comment-input"
             type="text"
             placeholder="Add comment..."
             value={this.state.curComment.text}
@@ -86,7 +100,7 @@ addNewComment = event => {
           />
         </form>
 
-        <i className="fas fa-ellipsis-h comment-section__comment-icon" />
+        <CommentIcon className="fas fa-ellipsis-h" />
       </div>
     );
   }
