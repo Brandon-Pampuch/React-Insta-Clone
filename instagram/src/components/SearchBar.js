@@ -1,22 +1,43 @@
 import React from "react";
 import "../global-styles/global.scss";
-import "./SearchBar.scss";
+import styled from "styled-components";
+
+const SearchWrapper = styled.div`
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 30px;
+  margin-top: 50px;
+  align-items: baseline;
+`;
+
+const LogoImage = styled.img`
+  width: 150px;
+  padding-left: 20px;
+`;
+const SearchInput = styled.input`
+  width: 200px;
+  padding-left: 80px;
+  outline: none;
+`;
+const SearchIcon = styled.i`
+  font-size: 2rem;
+  margin-left: 20px;
+  font-size: ${props => props.large ? "3rem" : "2rem"};
+`;
 
 const SearchBar = props => {
   return (
-    <div className="search-bar">
+    <SearchWrapper>
       <div>
-        <i className="fab fa-instagram search-bar__icon search-bar__icon--padding-right search-bar__icon--icon-large " />
-        <img
-          className="search-bar__search-logo"
+        <SearchIcon large className="fab fa-instagram" />
+        <LogoImage
           src="http://www.logospng.com/images/15/instagram-logo-large-390x130-jonathan-jeter-15681.png"
           alt="search bar"
         />
       </div>
       <form onSubmit={props.searchHandler}>
-        <input
+        <SearchInput
           onChange={props.onChangeHandler}
-          className="search-bar__input"
           type="text"
           placeholder="search"
           name="search"
@@ -24,11 +45,11 @@ const SearchBar = props => {
         />
       </form>
       <div>
-        <i className="far fa-compass search-bar__icon" />
-        <i className="far fa-heart search-bar__icon" />
-        <i className="far fa-user search-bar__icon" />
+        <SearchIcon className="far fa-compass" />
+        <SearchIcon className="far fa-heart" />
+        <SearchIcon className="far fa-user" />
       </div>
-    </div>
+    </SearchWrapper>
   );
 };
 
