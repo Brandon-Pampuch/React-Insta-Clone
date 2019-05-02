@@ -22,7 +22,7 @@ const SearchInput = styled.input`
 const SearchIcon = styled.i`
   font-size: 2rem;
   margin-left: 20px;
-  font-size: ${props => props.large ? "3rem" : "2rem"};
+  font-size: ${props => (props.large ? "3rem" : "2rem")};
 `;
 
 const SearchBar = props => {

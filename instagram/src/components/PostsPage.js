@@ -13,26 +13,25 @@ class PostPage extends React.Component {
     };
   }
 
-
-  componentWillMount(){
-      localStorage.getItem('users') && this.setState({
-          data: JSON.parse(localStorage.getItem('users')),
-          isLoading: false
-      })
+  componentWillMount() {
+    localStorage.getItem("users") &&
+      this.setState({
+        data: JSON.parse(localStorage.getItem("users")),
+        isLoading: false
+      });
   }
 
-  componentDidMount(){
-      if(!localStorage.getItem('users')){
-        this.setState({data : dummyData})
-      }else{
-          console.log('using data from local storage')
-      }
+  componentDidMount() {
+    if (!localStorage.getItem("users")) {
+      this.setState({ data: dummyData });
+    } else {
+      console.log("using data from local storage");
     }
+  }
 
   componentWillUpdate(nextProps, nextState) {
-    localStorage.setItem('users',JSON.stringify(nextState.data))
+    localStorage.setItem("users", JSON.stringify(nextState.data));
   }
-  
 
   onChangeHandler = event => {
     this.setState({
@@ -41,21 +40,18 @@ class PostPage extends React.Component {
     });
   };
 
-  searchHandler = (event) =>{
-    event.preventDefault()
-    this.setState(prevState =>({
-      
-      data: prevState.data.filter(post =>{
-        if(post.username === this.state.search){
-          return true
-        }else{
-          return false
+  searchHandler = event => {
+    event.preventDefault();
+    this.setState(prevState => ({
+      data: prevState.data.filter(post => {
+        if (post.username === this.state.search) {
+          return true;
+        } else {
+          return false;
         }
       })
-    }))
-
-  }
-  
+    }));
+  };
 
   addHeart = id => {
     this.setState(prevState => ({
@@ -75,7 +71,11 @@ class PostPage extends React.Component {
   render() {
     return (
       <div className="container">
-        <SearchBar onChangeHandler={this.onChangeHandler} searchState={this.state.search} searchHandler={this.searchHandler} />
+        <SearchBar
+          onChangeHandler={this.onChangeHandler}
+          searchState={this.state.search}
+          searchHandler={this.searchHandler}
+        />
         {this.state.data.map((post, index) => {
           return (
             <PostContainer
