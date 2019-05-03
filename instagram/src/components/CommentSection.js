@@ -41,11 +41,10 @@ class CommentsSection extends React.Component {
   }
 
   componentDidMount() {
-    console.log("comments:", this.props.comments);
     if (!localStorage.getItem("comments")) {
       this.setState({ comments: this.props.comments });
     } else {
-      console.log("using data from local storage");
+ 
     }
   }
 

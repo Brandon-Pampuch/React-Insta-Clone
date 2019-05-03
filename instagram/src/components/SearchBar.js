@@ -35,13 +35,14 @@ const SearchBar = props => {
           alt="search bar"
         />
       </div>
-      <form onSubmit={props.searchHandler}>
+      <form>
         <SearchInput
-          onChange={props.onChangeHandler}
+          onChange={props.searchHandler}
           type="text"
           placeholder="search"
           name="search"
-          value={props.searchState}
+        
+         
         />
       </form>
       <div>

@@ -9,6 +9,7 @@ class PostPage extends React.Component {
     super();
     this.state = {
       data: [],
+      filteredPosts: [],
       search: ""
     };
   }
@@ -24,8 +25,8 @@ class PostPage extends React.Component {
   componentDidMount() {
     if (!localStorage.getItem("users")) {
       this.setState({ data: dummyData });
+
     } else {
-      console.log("using data from local storage");
     }
   }
 
@@ -41,16 +42,8 @@ class PostPage extends React.Component {
   };
 
   searchHandler = event => {
-    event.preventDefault();
-    this.setState(prevState => ({
-      data: prevState.data.filter(post => {
-        if (post.username === this.state.search) {
-          return true;
-        } else {
-          return false;
-        }
-      })
-    }));
+    const posts = this.state.data.filter(post => post.username.includes(event.target.value));
+    this.setState({filteredPosts:posts});
   };
 
   addHeart = id => {
@@ -69,6 +62,8 @@ class PostPage extends React.Component {
   };
 
   render() {
+
+    if(this.state.filteredPosts.length > 0){
     return (
       <div className="container">
         <SearchBar
@@ -76,7 +71,9 @@ class PostPage extends React.Component {
           searchState={this.state.search}
           searchHandler={this.searchHandler}
         />
-        {this.state.data.map((post, index) => {
+
+       
+        {this.state.filteredPosts.map((post, index) => {
           return (
             <PostContainer
               post={post}
@@ -89,6 +86,39 @@ class PostPage extends React.Component {
         })}
       </div>
     );
+}else{
+  return (
+    <div className="container">
+      <SearchBar
+        onChangeHandler={this.onChangeHandler}
+        searchState={this.state.search}
+        searchHandler={this.searchHandler}
+      />
+
+     
+      {this.state.data.map((post, index) => {
+        return (
+          <PostContainer
+            post={post}
+            key={post.id}
+            index={index}
+            addHeart={this.addHeart}
+            number={post.id}
+          />
+        );
+      })}
+    </div>
+  );
+
+
+}
+
+
+
+
+
+
+
   }
 }
 
